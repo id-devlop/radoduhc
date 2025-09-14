@@ -1,0 +1,20 @@
+
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: hazard_tiles
+  namespace: streaming
+  labels: { strimzi.io/cluster: hazard-kafka }
+spec:
+  partitions: 6
+  replicas: 1
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: nowcast_tiles
+  namespace: streaming
+  labels: { strimzi.io/cluster: hazard-kafka }
+spec:
+  partitions: 6
+  replicas: 1

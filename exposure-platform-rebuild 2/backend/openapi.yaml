@@ -1,0 +1,81 @@
+
+openapi: 3.0.3
+info:
+  title: Exposure Platform API
+  version: "2025.08-full"
+servers:
+  - url: http://localhost:8080
+paths:
+  /config/effective:
+    get:
+      parameters:
+        - in: query
+          name: jurisdiction
+          schema: { type: string }
+        - in: query
+          name: class
+          schema: { type: string }
+        - in: query
+          name: product
+          schema: { type: string }
+      responses:
+        '200': { description: OK }
+  /audit/event:
+    post:
+      responses:
+        '200': { description: OK }
+  /audit/history:
+    get:
+      parameters:
+        - in: query
+          name: limit
+          schema: { type: integer }
+        - in: query
+          name: format
+          schema: { type: string }
+      responses:
+        '200': { description: OK }
+  /scenario/library:
+    get:
+      responses:
+        '200': { description: OK }
+  /scenario/run:
+    post:
+      responses:
+        '200': { description: OK }
+  /correlation/estimate:
+    post:
+      responses:
+        '200': { description: OK }
+  /bind:
+    post:
+      responses:
+        '200': { description: OK }
+  /export/s3:
+    post:
+      responses:
+        '200': { description: OK }
+  /exposure:
+    post:
+      responses:
+        '200': { description: OK }
+  /exposure/summary:
+    get:
+      responses:
+        '200': { description: OK }
+  /exposure/by-geo:
+    get:
+      responses:
+        '200': { description: OK }
+  /auth/demo-token:
+    get:
+      parameters:
+        - in: query
+          name: role
+          schema: { type: string }
+        - in: query
+          name: sub
+          schema: { type: string }
+      responses:
+        '200': { description: OK }
+components: {}
